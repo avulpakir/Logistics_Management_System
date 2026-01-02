@@ -1,0 +1,106 @@
+<div class="row border">
+    <div class="col" style="height: 750px;">
+        <div class="border mx-auto mt-5" style="height:400px;width:300px;">
+            Login Page
+        </div>
+
+    </div>
+</div>
+
+<div>
+    <h2 class="text-center">Login Form</h2>
+    <div>
+        <label for="email">Enter you Email</label>
+        <input type="password" id="email" v-model="email">
+    </div>
+    <div>
+        <label for="pass">Enter you Password</label>
+        <input type="password" id="pass" v-model="password">
+    </div>
+    <div>
+        <button class="btn btn-primary" @click="loginUser">Login</button>
+    </div>
+</div>
+<div class="mb-3">
+  <label for="name" class="form-label">Transaction Name</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1">
+</div>
+<div v-for="for t in transaction" class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{t.name}}<span class="badge text-white bg-secondary">{{t.type}}</span></h4>
+        <p class="card-text">Created at: {{t.date}}</p>
+        <p class="card-text">Delivery : {{t.delivery}}</p>
+        <p class="card-text">About : {{t.description}}</p>
+        <p class="card-text">From : {{t.source}} to {{t.destination}}</p>
+        <p class="card-text">Amount: {{t.amount}}</p>
+    </div>
+</div>
+
+
+
+
+<div class="mb-3">
+  <label for="name" class="form-label">Transaction Name</label>
+  <input type="email" class="form-control" id="name" v-model="transData.name">
+</div>
+<div class="mb-3">
+  <label for="type" class="form-label">Transaction Type</label>
+  <input type="email" class="form-control" id="type" v-model="transData.type">
+</div>
+<div class="mb-3">
+  <label for="desc" class="form-label">description</label>
+  <textarea class="form-control" id="desc" rows="3" v-model="transData.desc"></textarea>
+</div>
+<div class="mb-3">
+    <label for="source" class="form-label">Source City</label>
+
+    <select class="form-select" aria-label="Default select example" v-model="transData.source">
+    <option selected>Open this select menu</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Delhi">Delhi</option>
+    </select>
+
+</div>
+<div class="mb-3">
+    <label for="destination" class="form-label">Destination City</label>
+
+    <select class="form-select" aria-label="Default select example" v-model="transData.destination">
+    <option selected>Open this select menu</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Delhi">Delhi</option>
+    </select>
+
+</div>
+
+
+
+<div class="mb-3 text-end">
+    <button class="btn btn-primary">Create</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Package Name</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+           
+            <tr>{{t.id}}</tr>
+            <tr>{{t.name}}</tr>
+            <tr>{{t.source}}</tr>
+            <tr>{{t.destination}}</tr>
+            <tr>
+                <button class="btn btn-info btn-sm">ReView</button>
+            </tr>
+        
+    </tbody>
+
+</table>
+
